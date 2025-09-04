@@ -1,0 +1,298 @@
+/* === Reset y básicos === */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: #0f172a;
+}
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    line-height: 1.5;
+    background: #f8fafc;
+}
+/* === Variables === */
+:root {
+  /* 🎨 Colores */
+  --bg: #f8fafc;                /* Fondo general de la página */
+  --panel: #ffffff;             /* Fondo de tarjetas/paneles */
+  --text: #0f172a;              /* Texto principal */
+  --muted: #64748b;             /* Texto secundario / subtítulos / notas */
+  --primary: #2563eb;           /* Color principal (botones, enlaces) */
+  --primary-600: #1d4ed8;       /* Hover de elementos primarios */
+  --primary-700: #1e40af;       /* Estado activo de elementos primarios */
+  --accent: #16a34a;            /* Verde positivo / estados correctos */
+  --danger: #dc2626;            /* Rojo peligro / alerta */
+
+  /* 🔲 Layout */
+  --radius: 14px;               /* Borde redondeado general */
+  --shadow: 0 6px 24px rgba(15, 23, 42, 0.08); /* Sombra de paneles/cards */
+  --container: 1100px;          /* Ancho máximo del contenido central */
+
+  /* 📏 Escala de espacios */
+  --space-1: 4px;               /* Detalles muy pequeños, íconos */
+  --space-2: 8px;               /* Pequeños paddings internos */
+  --space-3: 12px;              /* Margen entre elementos secundarios */
+  --space-4: 16px;              /* Paddings estándar */
+  --space-5: 20px;              /* Separaciones medias */
+  --space-6: 24px;              /* Paddings grandes */
+  --space-8: 32px;              /* Márgenes entre bloques principales */
+  --space-10: 40px;             /* Separación de secciones grandes */
+  --space-12: 48px;             /* Espacios grandes en hero/secciones */
+}
+
+/* === Estilos y Responsive del Header === */
+.site-header{
+    display: flex;
+    justify-content: space-around;
+    padding: var(--space-4);
+    background-color: var(--panel);
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+.site-header__brand{
+    display: flex;
+    align-items: center;
+}
+.site-header__logo-mark{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    margin-right: var(--space-3);
+    color: var(--panel);
+}
+
+.site-header__menu-item{
+    text-decoration: none;
+    list-style: none;
+    display: inline-flex;
+    margin-left: var(--space-8);
+    
+}
+.site-header__menu-burger{
+    display: none;
+}
+
+
+.content{
+    display: flex;
+    position: relative;
+    left: 10%;
+    width: 80%;
+    padding-top: 65px;
+}
+
+/* === Estilos de Sistema de Botones === */
+.btn-group{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: fit-content;
+    margin: var(--space-8);
+    background-color: var(--panel);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    gap: 10px;
+    box-shadow: var(--shadow);
+}
+.btn-group__text{
+    color: var(--muted);
+}
+.btn-group__span{
+    font-weight: bold;
+}
+.btn-group__ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: var(--space-5);
+    align-items: center;
+}
+.btn{
+    border-radius: 200px;
+    border: none;
+    padding: var(--space-3);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+/* === Estilo de cada boton por separado === */
+.button--primary{
+    background-color: var(--primary);
+    color: var(--panel);
+}
+.button--outline{
+    background-color: var(--bg);
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+}
+.button--danger{
+    background-color: var(--danger);
+    color: var(--panel);
+}
+.button--icon{
+    background-color: var(--primary);
+    color: var(--panel);
+    gap: var(--space-3);
+}
+.button--disable{
+    color: var(--muted);
+    font-weight: lighter;
+    background-color: var(--bg);
+    cursor:no-drop;
+}
+
+/* === Estilos de la tarjeta del Producto === */
+.product-card{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: var(--space-8);
+    background-color: var(--panel);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    gap: 10px;
+}
+.product-card--content{
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    position: relative;
+}
+.product-card__media{
+    border-radius: var(--radius) var(--radius) 0px 0px ;
+    width: 100%;
+}
+.product-card__badge{
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    background-color: rgb(255, 179, 0);
+    border-radius: 200px;
+    padding: var(--space-1);
+    font-weight: bold;
+    text-align: center;
+    font-size: var(--space-3);
+}
+.product-card-info{
+    padding: var(--space-6);
+}
+.product-card__text{
+    color: var(--muted);
+    margin: var(--space-3) 0px;
+}
+.product-card__price{
+    display: inline-block;
+    font-weight: bold;
+    margin: var(--space-3) 0px;
+}
+.product-card__old-price{
+    color: var(--muted);
+    text-decoration: line-through;
+    font-size: small;
+}
+.product-card-buttons{
+    display: flex;
+    gap: var(--space-3);
+}
+.product-card__button-buy{
+    background-color: var(--primary);
+    color: var(--panel);
+    transition: 0.2s;
+}
+.product-card__button-buy:hover{
+    background-color: var(--panel);
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+}
+
+.product-card__button-add{
+    background-color: var(--panel);
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    gap: var(--space-3);
+}
+
+/* === Estilos de Secciones de relleno === */
+
+.container{
+    position: absolute;
+    left: 13%;
+    width: 75%;
+    margin-top: 20px;
+    
+}
+.panel{
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    background-color: var(--panel);
+    margin: 20px;
+    box-shadow: var(--shadow);
+}
+/* === Estilos Responsive de las tarjetas === */
+
+@media(max-width:850px){
+    .content{
+        display: flex;
+        flex-direction: column;
+        left: 13%;
+    }
+    .btn-group, .product-card{
+        width: 80%;
+    }
+    .container{
+        width: 70%;
+        left: 15%;
+    }
+}
+
+@media(max-width:576px){
+    .site-header__nav{
+    justify-content: space-between;
+    }
+    .site-header__menu-burger{
+        display:flex;
+        list-style: none;
+        width: 40px;
+        height: 40px;
+        padding: var(--space-2);
+        background-color: var(--bg);
+        border-radius: var(--radius);
+    }
+    .site-header__menu-burger:hover{
+        cursor: pointer;
+        border: 2px solid var(--primary);
+    }
+    .site-header__menu-item{
+        display: none;
+    }       
+    .content{
+        left: 8%;
+    }
+    .btn-group, .product-card{
+        width: 90%;
+    }
+    .container{
+        width: 80%;
+        left: 10%;
+    }
+}
+
+@media(max-width:460px){
+    .product-card-buttons{
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
